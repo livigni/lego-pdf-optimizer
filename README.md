@@ -14,21 +14,24 @@ You must have Python 3 and the `pypdf` library installed.
 
 ```bash
 pip install pypdf
+```
 
-Execution
+### Execution
 Run the script from the command line, providing the name of the LEGO PDF file as an argument.
 
-Bash
 
-python3 lego_pdf2.py <input_file_name.pdf>
+```bash
+python3 lego_pdf.py <input_file_name.pdf>
+```
+
 Example:
 
-Bash
-
-python3 lego_pdf2.py 6099685.pdf
+```bash
+python3 lego_pdf.py 6099685.pdf
+```
 A new file will be generated with the _optimized suffix (e.g., 6099685_optimized.pdf).
 
-⚙️ How It Works
+## How It Works
 The tool acts directly on the embedded PostScript language within the PDF (the "content stream") using the pypdf library for parsing and reconstruction.
 
 Content Extraction: It analyzes the /Contents object of each page, handling complex PDF structures (indirect references, arrays, and binary data) to extract the command stream.
